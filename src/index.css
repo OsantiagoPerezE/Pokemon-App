@@ -1,13 +1,176 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body,
+html {
+	font-family: 'Delicious Handrawn', cursive;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 20px;
+}
+.cardList {
+	background-color: #ffe165;
+	width: 180px;
+	height: 280px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	padding: 15px 15px 0px 15px;
+	border-radius: 15px;
+	position: relative;
+	border: 2px solid #e9a909;
+}
+
+.imageP {
+	height: 150px;
+	border: 2px solid #e9a909;
+	border-radius: 15px;
+}
+
+.namePoke {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	font-weight: 700;
+	font-size: 16px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	text-align: left;
+	text-transform: capitalize;
+	width: 100%;
+}
+
+.description {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	background-color: #deb13c;
+	padding: 0 10px;
+	margin: 5px 0;
+	border-radius: 5px;
+}
+.typePoke {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	gap: 1px;
+	font-size: 11px;
+	font-weight: 700;
+	height: 80%;
+}
+.itemType {
+	font-weight: 400;
+	padding-right: 5px;
+}
+.weightPoke {
+	gap: 5px;
+	display: flex;
+	font-size: 11px;
+	font-weight: 700;
+}
+.itemWeight {
+	font-weight: 400;
+}
+
+.heightPoke {
+	gap: 5px;
+	display: flex;
+	font-size: 11px;
+	font-weight: 700;
+}
+.itemHeight {
+	font-weight: 400;
+}
+
+.headerCard {
+	width: 100%;
+	display: flex;
+}
+
+.idPoke {
+	background-color: #e9a909;
+	border-radius: 0 12px 0 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: auto;
+	height: auto;
+	min-width: 20px;
+	min-height: 20px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	padding: 1px;
+}
+
+.statsPoke {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 5px 0px;
+}
+
+.itemStat {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 9px;
+}
+.abilitiesPoke {
+	background-color: #e9a909;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 0px 5px;
+	width: 210px;
+	border-radius: 0px 0px 12px 12px;
+	padding: 5px 0px;
+	margin-top: 5px;
+}
+
+.itemAbilities {
+	font-size: 12px;
+	font-weight: 700;
+	text-align: center;
+}
+
+@media (max-width: 1440px) {
+	.content {
+		grid-template-columns: repeat(5, 1fr);
+	}
+}
+@media (max-width: 1200px) {
+	.content {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+@media (max-width: 1000px) {
+	.content {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media (max-width: 750px) {
+	.content {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 15px;
+	}
+	.cardList {
+		width: 150px;
+		height: 250px;
+	}
+
+	.abilitiesPoke {
+		width: 180px;
+	}
+
+	.itemStat {
+		font-size: 8px;
+	}
 }
