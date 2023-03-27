@@ -14,7 +14,7 @@ const AbilitiesPoke = ({abilitiesP}) => {
 			<div className='abilitiesPoke'>
 				{abilitiesPoke.map((i, e) => (
 					<div key={e} className='itemAbilities'>
-						{i.ability.name}
+						{i.ability.name.replace('-', ' ')}
 					</div>
 				))}
 			</div>

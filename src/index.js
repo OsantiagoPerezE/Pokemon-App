@@ -4,11 +4,17 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import ListPokemons from './components/ListPokemons/ListPokemons';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import CardDetail from './components/CardDetails/CardDetail';
 
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <ListPokemons />,
+	},
+
+	{
+		path: '/pokemon/:pokeId',
+		element: <CardDetail />,
 	},
 ]);
 

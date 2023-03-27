@@ -22,7 +22,7 @@ html {
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: column;
-	padding: 15px 15px 0px 15px;
+	padding: 0px 15px 0px 15px;
 	border-radius: 15px;
 	position: relative;
 	border: 2px solid #e9a909;
@@ -93,6 +93,7 @@ html {
 .headerCard {
 	width: 100%;
 	display: flex;
+	padding-top: 15px;
 }
 
 .idPoke {
@@ -139,8 +140,53 @@ html {
 	font-size: 12px;
 	font-weight: 700;
 	text-align: center;
+	text-transform: capitalize;
 }
 
+.iconPoke {
+	background: no-repeat;
+	position: absolute;
+	top: 1px;
+	left: 1px;
+}
+
+.more {
+	display: none;
+}
+.cardList:hover .more {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.3);
+	width: 100%;
+	height: 100%;
+	border-radius: 15px;
+}
+.moreLink {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+}
+.moreLink:hover {
+	cursor: pointer;
+}
+.containerCard {
+	padding: 20px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.contentCard {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
 @media (max-width: 1440px) {
 	.content {
 		grid-template-columns: repeat(5, 1fr);

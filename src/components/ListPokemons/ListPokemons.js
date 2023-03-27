@@ -1,18 +1,17 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import axios from 'axios';
-import CardList from '../cardList/CardList';
+import CardList from '../CardList/CardList';
 
 const ListPokemons = () => {
 	const [urlPoke, setUrlPoke] = useState([]);
 
-	const hanldeIds = async () => {
-		await axios.get('https://pokeapi.co/api/v2/pokemon/').then((response) => {
-			setUrlPoke(response.data.results);
-		});
-	};
-	if (!urlPoke.length) {
-		return <div onClick={hanldeIds}>Start</div>;
-	}
+	useEffect(() => {
+		if (!urlPoke.length) {
+			axios.get('https://pokeapi.co/api/v2/pokemon/').then((response) => {
+				setUrlPoke(response.data.results);
+			});
+		}
+	}, []);
 
 	return (
 		<div className='container'>

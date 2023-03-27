@@ -9,9 +9,11 @@ import HeightPoke from '../ItemsCard/heightPoke/HeightPoke';
 import IdPoke from '../ItemsCard/idPoke/IdPoke';
 import StatsPoke from '../ItemsCard/statsPoke/StatsPoke';
 import AbilitiesPoke from '../ItemsCard/abilitiesPoke/AbilitiesPoke';
+import logoPoke from '../../assets/icon-pokeball.png';
+import SeeMore from '../ItemsCard/seeMore/SeeMore';
 
 const CardList = ({urlPoke}) => {
-	const [info, setInfo] = useState('');
+	const [info, setInfo] = useState();
 	const [name, setName] = useState('');
 	const [imageP, setImageP] = useState('');
 	const [weight, setWeight] = useState(0);
@@ -23,7 +25,6 @@ const CardList = ({urlPoke}) => {
 
 	useEffect(() => {
 		axios.get(urlPoke).then((response) => {
-			console.log(response.data);
 			setInfo(response.data);
 		});
 	}, [urlPoke]);
@@ -39,14 +40,19 @@ const CardList = ({urlPoke}) => {
 		setAbilitiesP(pathOr([], ['abilities'], info));
 	}, [info]);
 
+	useEffect(() => {
+		if (info) {
+			console.log('info', info);
+		}
+	}, [info]);
+
 	return (
 		<div className='cardList'>
+			<img className='iconPoke' src={logoPoke} />
 			<div className='headerCard'>
 				<NamePoke name={name} />
-				<div>
-					<IdPoke idP={idP} />
-					<TypePoke typeP={typeP} />
-				</div>
+				<IdPoke idP={idP} />
+				<TypePoke typeP={typeP} />
 			</div>
 			<ImagePoke imageP={imageP} />
 			<div className='description'>
@@ -59,6 +65,7 @@ const CardList = ({urlPoke}) => {
 			<div>
 				<AbilitiesPoke abilitiesP={abilitiesP} />
 			</div>
+			<SeeMore idP={idP} />
 		</div>
 	);
 };
